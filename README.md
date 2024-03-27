@@ -9,7 +9,7 @@
 This repository contains my QMK keyboard firmwares source code.
 It's equivalent to the [QMK Userspace](https://github.com/qmk_userspace) repository.
 
-All of my QMK powered keyboards will be in the [./keyboards] directory (currently only one which is my [Sofle](https://github.com/josefadamcik/SofleKeyboard) keyboard).
+All of my QMK powered keyboards will be in the [./keyboards](./keyboards) directory (currently only one which is my [Sofle](https://github.com/josefadamcik/SofleKeyboard) keyboard).
 
 ## :wrench:&nbsp; Flashing the keyboard
 
