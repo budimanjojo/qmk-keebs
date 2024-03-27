@@ -1,0 +1,6 @@
+{
+  "userspace_version": "1.0",
+  "build_targets": [
+    ["sofle/rev1", "budimanjojo"]
+  ]
+}
