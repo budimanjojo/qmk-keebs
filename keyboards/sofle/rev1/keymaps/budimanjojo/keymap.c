@@ -164,6 +164,9 @@ uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(1, KC_SPC):
         case LT(2, KC_ENT):
+        // Disable quick tap for Shift modifiers
+        case SFT_M:
+        case SFT_V:
             return 0;
         default:
             return QUICK_TAP_TERM;
