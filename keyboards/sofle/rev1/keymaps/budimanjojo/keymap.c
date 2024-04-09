@@ -177,6 +177,8 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(1, KC_SPC):
         case LT(2, KC_ENT):
+        case SFT_M:
+        case SFT_V:
             // Immediately select the hold action when another key is pressed.
             return true;
         default:
