@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Tab  |  `   |  ~   |      |      |      |                    |      |   7  |   8  |   9  |   *  |   =  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Esc  |      |      |      |      |      |-------.    ,-------|   ^  |   4  |   5  |   6  |   +  |  Num |
+ * | Esc  |      |      |   (  |   )  |      |-------.    ,-------|   ^  |   4  |   5  |   6  |   +  |  Num |
  * |------+------+------+------+------+------|  Caps |    | Pscr  |------+------+------+------+------+------|
  * |Shift |      |      |      |      |      |-------|    |-------|   $  |   1  |   2  |   3  |   -  | Shift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [1] = LAYOUT(
     KC_NO,    KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
     _______,  KC_GRV, KC_TILD, KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_7,    KC_8,    KC_9,    KC_ASTR, KC_EQL,
-    _______,  KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_CIRC, KC_4,    KC_5,    KC_6,    KC_PLUS, KC_NUM,
+    _______,  KC_NO,  KC_NO,   KC_LPRN, KC_RPRN, KC_NO,                     KC_CIRC, KC_4,    KC_5,    KC_6,    KC_PLUS, KC_NUM,
     _______,  KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   _______, _______, KC_DLR,  KC_1,    KC_2,    KC_3,    KC_MINS, _______,
                       _______, _______, _______, _______, _______, _______, _______, KC_0,    KC_DOT,  KC_SLSH
 ),
