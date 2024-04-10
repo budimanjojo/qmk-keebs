@@ -27,6 +27,7 @@
 #define ALT_CM LALT_T(KC_COMM)
 #define GUI_DT RGUI_T(KC_DOT)
 #define CTL_SL RCTL_T(KC_SLSH)
+#define SFT_PGDN RSFT_T(KC_PGDN)
 
 // Default keymap. This can be changed in Via.
 
@@ -63,18 +64,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Esc  |      |      |   (  |   )  |      |-------.    ,-------|   ^  |   4  |   5  |   6  |   +  |  Num |
  * |------+------+------+------+------+------|  Caps |    | Pscr  |------+------+------+------+------+------|
- * |Shift |      |      |      |      |      |-------|    |-------|   $  |   1  |   2  |   3  |   -  | Shift|
+ * |Shift | LCTL | LGUI | LALT | LSFT |      |-------|    |-------|   $  |   1  |   2  |   3  |   -  | Shift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            | LCTL | LGUI | LALT |Space | /  DEL  /       \ Bspc \  |Enter |  0   |  .   |   /  |
  *            |      |      |      |LOWER |/       /         \      \ |RAISE |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
 [1] = LAYOUT(
-    KC_NO,    KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-    _______,  KC_GRV, KC_TILD, KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_7,    KC_8,    KC_9,    KC_ASTR, KC_EQL,
-    _______,  KC_NO,  KC_NO,   KC_LPRN, KC_RPRN, KC_NO,                     KC_CIRC, KC_4,    KC_5,    KC_6,    KC_PLUS, KC_NUM,
-    _______,  KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   _______, _______, KC_DLR,  KC_1,    KC_2,    KC_3,    KC_MINS, _______,
-                      _______, _______, _______, _______, _______, _______, _______, KC_0,    KC_DOT,  KC_SLSH
+    KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    _______,  KC_GRV,  KC_TILD, KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_7,    KC_8,    KC_9,    KC_ASTR, KC_EQL,
+    _______,  KC_NO,   KC_NO,   KC_LPRN, KC_RPRN, KC_NO,                     KC_CIRC, KC_4,    KC_5,    KC_6,    KC_PLUS, KC_NUM,
+    _______,  KC_RCTL, KC_LGUI, KC_LALT, KC_LSFT, KC_NO,   _______, _______, KC_DLR,  KC_1,    KC_2,    KC_3,    KC_MINS, _______,
+                       _______, _______, _______, _______, _______, _______, _______, KC_0,    KC_DOT,  KC_SLSH
 ),
 /* RAISE
  * ,----------------------------------------.                    ,-----------------------------------------.
@@ -85,17 +86,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Esc  |  F5  |  F6  |  F7  |  F8  |      |-------.    ,-------| Left | Down |  Up  | Right|      |      |
  * |------+------+------+------+------+------|  Caps  |   | Pscr  |------+------+------+------+------+------|
  * |Shift |  F9  |  F10 |  F11 |  F12 |      |--------|   |-------|  End | PgDn |      |      |      | Shift|
+ * |      |      |      |      |      |      |-------|    |-------|      | RSFT | LALT | RGUI | RCTL |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            | LCTL | LGUI | LALT |Space | /  DEL  /       \ Bspc \  |Enter |      |      |      |
  *            |      |      |      |LOWER |/       /         \      \ |RAISE |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
 [2] = LAYOUT(
-    KC_NO,    KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-    _______,  KC_F1,  KC_F2,   KC_F3,   KC_F4,   KC_NO,                     KC_HOME, KC_PGUP, KC_NO,   KC_NO,   KC_NO,   KC_NO,
-    _______,  KC_F5,  KC_F6,   KC_F7,   KC_F8,   KC_NO,                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,   KC_NO,
-    _______,  KC_F9,  KC_F10,  KC_F11,  KC_F12,  KC_NO,   _______, _______, KC_END,  KC_PGDN, KC_NO,   KC_NO,   KC_NO,   _______,
-                      _______, _______, _______, _______, _______, _______, _______, KC_NO,   KC_NO,   KC_NO
+    KC_NO,    KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    _______,  KC_F1,  KC_F2,   KC_F3,   KC_F4,   KC_NO,                     KC_HOME, KC_PGUP,  KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    _______,  KC_F5,  KC_F6,   KC_F7,   KC_F8,   KC_NO,                     KC_LEFT, KC_DOWN,  KC_UP,   KC_RGHT, KC_NO,   KC_NO,
+    _______,  KC_F9,  KC_F10,  KC_F11,  KC_F12,  KC_NO,   _______, _______, KC_END,  SFT_PGDN, KC_LALT, KC_RGUI, KC_RCTL, _______,
+                      _______, _______, _______, _______, _______, _______, _______, KC_NO,    KC_NO,   KC_NO
 ),
 /* ADJUST
  * ,----------------------------------------.                    ,-----------------------------------------.
@@ -179,6 +181,7 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
         case LT(2, KC_ENT):
         case SFT_M:
         case SFT_V:
+        case SFT_PGDN:
             // Immediately select the hold action when another key is pressed.
             return true;
         default:
