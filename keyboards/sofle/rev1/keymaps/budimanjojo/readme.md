@@ -4,7 +4,6 @@
 
 Features:
 
-- VIA support.
 - Rotate left encoder to switch browser tabs. Click it to toggle Capslock.
 - Rotate right encoder to do page up and down. Click it to do screenshot.
 - Permissive hold dual function keys for layer switching and `Enter` or `Space`.
