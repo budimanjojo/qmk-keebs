@@ -162,6 +162,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case SFT_M:
+        case SFT_V:
+            return TAPPING_TERM + 20;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(1, KC_SPC):
@@ -179,8 +189,6 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT(1, KC_SPC):
         case LT(2, KC_ENT):
-        case SFT_M:
-        case SFT_V:
         case SFT_PGDN:
             // Immediately select the hold action when another key is pressed.
             return true;
