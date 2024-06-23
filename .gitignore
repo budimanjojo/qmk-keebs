@@ -9,3 +9,8 @@
 *.hex
 *.bin
 *.uf2
+
+# LSP files
+compile_commands.json
+.clangd/
+.cache/
