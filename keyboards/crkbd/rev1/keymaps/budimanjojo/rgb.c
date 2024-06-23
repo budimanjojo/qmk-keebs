@@ -67,7 +67,8 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         rgb_matrix_mode_noeeprom(mode);
     }
 
-    return state;
+    // TODO: find a better way to not place this here
+    return update_tri_layer_state(state, 1, 2, 3);
 }
 
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
