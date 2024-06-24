@@ -29,6 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define OLED_TIMEOUT 60000
 
 #ifdef RGB_MATRIX_ENABLE
+#   define SPLIT_ACTIVITY_ENABLE // hopefully this fixes the problem of timeout not working sometimes
 #   define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_RAINBOW_MOVING_CHEVRON
 #   define ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON
 #   define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
