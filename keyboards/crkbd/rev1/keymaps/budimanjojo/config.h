@@ -26,18 +26,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define QUICK_TAP_TERM_PER_KEY
 #define SPLIT_LAYER_STATE_ENABLE
 #define MASTER_LEFT
-#define OLED_TIMEOUT 60000
 
 #ifdef RGB_MATRIX_ENABLE
-#   define SPLIT_ACTIVITY_ENABLE // hopefully this fixes the problem of timeout not working sometimes
 #   define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_RAINBOW_MOVING_CHEVRON
 #   define ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON
 #   define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
 #   define RGB_MATRIX_KEYPRESSES
 #   define RGB_MATRIX_SLEEP
-#   define RGB_MATRIX_TIMEOUT OLED_TIMEOUT
 #   define RGB_MATRIX_HUE_STEP 8
 #   define RGB_MATRIX_SAT_STEP 8
 #   define RGB_MATRIX_VAL_STEP 8
 #   define RGB_MATRIX_SPD_STEP 10
 #endif
+
+// This is my own preprocessor directive
+#define RGB_OLED_TIMEOUT 60000 // number of miliseconds to wait until RGB and OLED automatically turns off

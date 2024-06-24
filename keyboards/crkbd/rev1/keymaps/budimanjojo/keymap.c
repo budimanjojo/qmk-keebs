@@ -18,6 +18,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "rgb_matrix.h"
 #include QMK_KEYBOARD_H
 #include "oled.c"
 #include "rgb.c"
@@ -202,4 +203,24 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
             // Do not select the hold action when another key is pressed.
             return false;
     }
+}
+
+void housekeeping_task_user(void) {
+#if (RGB_OLED_TIMEOUT > 0)
+    if (last_input_activity_elapsed() > RGB_OLED_TIMEOUT && last_led_activity_elapsed() > RGB_OLED_TIMEOUT) {
+#   if defined(OLED_ENABLE)
+        oled_off();
+#   endif //defined(OLED_ENABLE)
+#   if defined(RGB_MATRIX_ENABLE)
+        rgb_matrix_set_suspend_state(true);
+#   endif //defined(RGB_MATRIX_ENABLE)
+    } else {
+#   if defined(OLED_ENABLE)
+        oled_on();
+#   endif //defined(OLED_ENABLE)
+#   if defined(RGB_MATRIX_ENABLE)
+        rgb_matrix_set_suspend_state(false);
+#   endif //defined(RGB_MATRIX_ENABLE)
+    }
+#endif //(RGB_OLED_TIMEOUT > 0)
 }

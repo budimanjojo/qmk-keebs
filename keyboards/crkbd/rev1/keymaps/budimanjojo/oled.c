@@ -209,17 +209,6 @@ void animate_luna(int LUNA_X, int LUNA_Y) {
 
 /* logic */
 static void render_luna(int LUNA_X, int LUNA_Y) {
-
-#   if OLED_TIMEOUT > 0
-    /* the animation prevents the normal timeout from occuring */
-    if (last_input_activity_elapsed() > OLED_TIMEOUT && last_led_activity_elapsed() > OLED_TIMEOUT) {
-        oled_off();
-        return;
-    } else {
-        oled_on();
-    }
-#   endif
-
     /* animation timer */
     if (timer_elapsed32(anim_timer) > ANIM_FRAME_DURATION) {
         anim_timer = timer_read32();
@@ -384,17 +373,6 @@ static void render_jojo_anim(int LOGO_X, int LOGO_Y) {
     /* JOJO static logo */
     oled_set_cursor(LOGO_X, LOGO_Y);
     oled_write_raw_P(jojo_logo, sizeof(jojo_logo));
-
-
-#   if OLED_TIMEOUT > 0
-    /* the animation prevents the normal timeout from occuring */
-    if (last_input_activity_elapsed() > OLED_TIMEOUT && last_led_activity_elapsed() > OLED_TIMEOUT) {
-        oled_off();
-        return;
-    } else {
-        oled_on();
-    }
-#   endif
 
     /* animation timer */
     if (timer_elapsed32(anim_timer) > ANIM_FRAME_DURATION) {
