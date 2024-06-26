@@ -177,8 +177,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 uint16_t get_quick_tap_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case LT1_SPC:
-        case LT2_ENT:
             return 90;
+        case LT2_ENT:
         case LT4_LBR:
         // Disable quick tap for Shift modifiers
         case SFT_M:
