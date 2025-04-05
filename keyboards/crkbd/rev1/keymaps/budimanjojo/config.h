@@ -25,7 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PERMISSIVE_HOLD_PER_KEY
 #define QUICK_TAP_TERM_PER_KEY
 #define SPLIT_LAYER_STATE_ENABLE
-#define MASTER_LEFT
+#define EE_HANDS
 
 #ifdef RGB_MATRIX_ENABLE
 #   define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_RAINBOW_MOVING_CHEVRON
